@@ -1,9 +1,10 @@
 import './App.css'
+import LoginForm from './components/loginForm'
 
 function App() {
   return (
     <>
-    <p>Hello world</p>
+    <LoginForm/>
     </>
   )
 }
