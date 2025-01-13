@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function ForgotPasswordForm() {
    const [email, setEmail] = useState("");
@@ -33,6 +34,13 @@ export default function ForgotPasswordForm() {
             >
               Submit Email
             </button>
+          </div>
+          
+          <div className="mt-3 text-center">
+            <p className="font-serif">
+              Return to Login Page{" "}
+              <Link to=".." className="font-semibold">Login</Link>
+            </p>
           </div>
         </form>
       </div>
