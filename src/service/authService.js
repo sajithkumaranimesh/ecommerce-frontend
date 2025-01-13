@@ -9,7 +9,7 @@ const authService = {
     if (!response) {
       console.log("login error");
     }
-    return response;
+    return await response.json();
   },
 };
 

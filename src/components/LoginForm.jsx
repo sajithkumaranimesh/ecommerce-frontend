@@ -1,5 +1,6 @@
 import { useState } from "react";
 import authService from "../service/authService";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -8,20 +9,32 @@ export default function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await authService.login({ email, password });
-    const data = await response.json();
-    if (data.success) console.log("login success!");
-    localStorage.setItem("token", data.token);
+    try {
+      const response = authService.login({ email, password });
+      const data = await response;
 
-    setEmail("");
-    setPassword("");
+      if (data.success) {
+        console.log("login successful!");
+        localStorage.setItem("token", data.token);
+      }
+      setEmail("");
+      setPassword("");
+
+      toast.promise(response, {
+        pending: "Loggin in...",
+        success: "Login successful 😊",
+        error: "Login failed! Please check your email and password.",
+      });
+    } catch (error) {
+      throw new Error("Loggin faild!");
+    }
   };
 
   return (
     <div className="flex justify-center items-center h-screen bg-yellow-400		">
       <div className="w-96 p-6 shadow-lg bg-white rounded-md">
         <form onSubmit={handleSubmit}>
-          <h1 className="text-3xl block text-center font-serif">login</h1>
+          <h1 className="text-3xl block text-center font-serif">Login</h1>
           <hr className="mt-3" />
 
           <div className="mt-3">
@@ -32,7 +45,7 @@ export default function LoginForm() {
               type="email"
               id="email"
               className="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600 rounded-md"
-              placeholder="Enter Username..."
+              placeholder="Enter Email..."
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -79,6 +92,7 @@ export default function LoginForm() {
             </p>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
