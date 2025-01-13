@@ -1,6 +1,7 @@
 import { useState } from "react";
 import authService from "../service/authService";
 import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -86,9 +87,7 @@ export default function LoginForm() {
           <div className="mt-3 text-center">
             <p className="font-serif">
               Don't have an account ?{" "}
-              <a href="#" className="font-semibold">
-                Signup
-              </a>
+              <Link to='signup' className="font-semibold">Signup</Link>
             </p>
           </div>
         </form>

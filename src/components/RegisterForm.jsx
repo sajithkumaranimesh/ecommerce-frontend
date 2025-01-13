@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import authService from "../service/authService";
+import { Link } from "react-router";
 
 export default function RegisterForm() {
   const [name, setName] = useState("");
@@ -119,9 +120,7 @@ export default function RegisterForm() {
           <div className="mt-3 text-center">
             <p className="font-serif">
               Already have an account ?{" "}
-              <a href="#" className="font-semibold">
-                Login
-              </a>
+              <Link to=".." className="font-semibold">Login</Link>
             </p>
           </div>
         </form>
