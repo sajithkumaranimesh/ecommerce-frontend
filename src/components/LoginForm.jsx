@@ -25,10 +25,7 @@ export default function LoginForm() {
           <hr className="mt-3" />
 
           <div className="mt-3">
-            <label
-              htmlFor="email"
-              className="block text-base mb-2 font-serif"
-            >
+            <label htmlFor="email" className="block text-base mb-2 font-serif">
               Email
             </label>
             <input
@@ -74,7 +71,12 @@ export default function LoginForm() {
           </div>
 
           <div className="mt-3 text-center">
-            <p className="font-serif">Don't have an account ? <a href="#" className="font-semibold">Signup</a></p>
+            <p className="font-serif">
+              Don't have an account ?{" "}
+              <a href="#" className="font-semibold">
+                Signup
+              </a>
+            </p>
           </div>
         </form>
       </div>

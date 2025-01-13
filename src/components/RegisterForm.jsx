@@ -100,7 +100,12 @@ export default function RegisterForm() {
           </div>
 
           <div className="mt-3 text-center">
-            <p className="font-serif">Already have an account ? <a href="#" className="font-semibold">Login</a></p>
+            <p className="font-serif">
+              Already have an account ?{" "}
+              <a href="#" className="font-semibold">
+                Login
+              </a>
+            </p>
           </div>
         </form>
       </div>
