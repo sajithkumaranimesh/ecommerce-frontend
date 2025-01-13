@@ -70,9 +70,7 @@ export default function LoginForm() {
           </div>
 
           <div className="mt-3 text-end">
-            <a className="font-sans text-red-400 hover:text-red-500 font-serif">
-              Forgot Password?
-            </a>
+            <Link to='forgot-password' className="text-red-400 hover:text-red-500 font-serif">Forgot Password?</Link>
           </div>
 
           <div className="mt-5">

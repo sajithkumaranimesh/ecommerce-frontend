@@ -40,7 +40,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-yellow-400		">
+    <div className="flex justify-center items-center h-screen bg-yellow-400">
       <div className="w-96 p-6 shadow-lg bg-white rounded-md">
         <form onSubmit={handleSubmit}>
           <h1 className="text-3xl block text-center font-serif">Signup</h1>
