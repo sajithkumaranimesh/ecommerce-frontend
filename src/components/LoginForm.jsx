@@ -34,11 +34,15 @@ export default function LoginForm() {
   return (
     <div className="bg-amber-100 h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-      <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">Login</h2>
+        <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">
+          Login
+        </h2>
         <form onSubmit={handleSubmit}>
-
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-800 font-lora font-medium mb-1">
+            <label
+              htmlFor="email"
+              className="block text-gray-800 font-lora font-medium mb-1"
+            >
               Email
             </label>
             <input
@@ -69,7 +73,12 @@ export default function LoginForm() {
           </div>
 
           <div className="mb-4 text-right">
-            <Link to='forgot-password' className="text-amber-600 hover:text-amber-700 text-sm font-poppins">Forgot Password?</Link>
+            <Link
+              to="forgot-password"
+              className="text-amber-600 hover:text-amber-700 text-sm font-poppins"
+            >
+              Forgot Password?
+            </Link>
           </div>
 
           <div className="mt-5">
@@ -84,7 +93,12 @@ export default function LoginForm() {
           <div className="mt-3 text-center">
             <p className="text-center text-gray-800 font-lora text-sm mt-4">
               Don't have an account ?{" "}
-              <Link to='signup' className="text-amber-600 hover:text-amber-700 font-medium">Signup</Link>
+              <Link
+                to="signup"
+                className="text-amber-600 hover:text-amber-700 font-medium"
+              >
+                Signup
+              </Link>
             </p>
           </div>
         </form>

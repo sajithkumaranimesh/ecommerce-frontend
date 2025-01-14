@@ -6,11 +6,10 @@ export default function ResetPasswordForm() {
   return (
     <div className="bg-amber-100 h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-      <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">
-            Reset Password
-          </h2>
+        <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">
+          Reset Password
+        </h2>
         <form>
-
           <div className="mb-4">
             <label
               htmlFor="new-password"

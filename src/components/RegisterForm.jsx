@@ -42,11 +42,15 @@ export default function RegisterForm() {
   return (
     <div className="bg-amber-100 h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-      <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">Signup</h2>
+        <h2 className="text-amber-900 text-2xl font-poppins font-bold mb-6 text-center">
+          Signup
+        </h2>
         <form onSubmit={handleSubmit}>
-
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-800 font-lora font-medium mb-1">
+            <label
+              htmlFor="name"
+              className="block text-gray-800 font-lora font-medium mb-1"
+            >
               Name
             </label>
             <input
@@ -60,7 +64,10 @@ export default function RegisterForm() {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-800 font-lora font-medium mb-1">
+            <label
+              htmlFor="email"
+              className="block text-gray-800 font-lora font-medium mb-1"
+            >
               Email
             </label>
             <input
@@ -119,7 +126,12 @@ export default function RegisterForm() {
           <div className="mt-3 text-center">
             <p className="text-center text-gray-800 font-lora text-sm mt-4">
               Already have an account ?{" "}
-              <Link to=".." className="text-amber-600 hover:text-amber-700 font-medium">Login</Link>
+              <Link
+                to=".."
+                className="text-amber-600 hover:text-amber-700 font-medium"
+              >
+                Login
+              </Link>
             </p>
           </div>
         </form>
