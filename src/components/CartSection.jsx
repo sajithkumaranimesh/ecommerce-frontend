@@ -1,4 +1,11 @@
-export default function CartSection({ cartItems }) {
+import { useContext } from "react";
+import { Cartcontext } from "../context/Cart";
+
+export default function CartSection() {
+    const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal, } = useContext(Cartcontext);
+
+    const totalPrice = 0;
+
     return (
         <section className="container mx-auto py-12 px-4">
             <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Your Cart</h2>
@@ -13,10 +20,10 @@ export default function CartSection({ cartItems }) {
                             </div>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <button className="bg-gray-200 p-1 rounded-full"> - </button>
+                            <button onClick={() => {removeFromCart(item)}} className="bg-gray-200 p-1 rounded-full"> - </button>
                             <span className="text-lg font-semibold">{item.quantity}</span>
-                            <button className="bg-gray-200 p-1 rounded-full"> + </button>
-                            <button className="text-red-500 hover:text-red-700 transition-all">Remove</button>
+                            <button onClick={() => {addToCart(item)}} className="bg-gray-200 p-1 rounded-full"> + </button>
+                            <button onClick={() => {}} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
                         </div>
                     </div>
                 ))}
