@@ -6,6 +6,10 @@ export default function CartSection() {
 
     const totalPrice = 0;
 
+    const handleSubmit = () => {
+        console.log(cartItems);
+    }
+
     return (
         <section className="container mx-auto py-12 px-4">
             <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Your Cart</h2>
@@ -30,7 +34,7 @@ export default function CartSection() {
             </div>
             <div className="mt-8 p-6 bg-gray-100 rounded-lg shadow-md text-right">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">Total: ${totalPrice.toFixed(2)}</h3>
-                <button className="bg-orange-500 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                <button onClick={handleSubmit} className="bg-orange-500 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
                     Checkout
                 </button>
             </div>
