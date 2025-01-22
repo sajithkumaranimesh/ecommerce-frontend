@@ -1,13 +1,20 @@
+
 import { useContext } from "react";
 import { Cartcontext } from "../context/Cart";
 
 export default function CartSection() {
     const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal, } = useContext(Cartcontext);
 
-    const totalPrice = 0;
+    const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-    const handleSubmit = () => {
-        console.log(cartItems);
+    const handleSubmit = async () => {
+        console.log(cartItems,"totalprice" + ' = ' +totalPrice);
+        const response = await fetch('http://localhost:3000/api/v1/order/create-checkout-session', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({cartItems}),
+        })
+        const data = await response.json();
     }
 
     return (
@@ -27,7 +34,7 @@ export default function CartSection() {
                             <button onClick={() => {removeFromCart(item)}} className="bg-gray-200 p-1 rounded-full"> - </button>
                             <span className="text-lg font-semibold">{item.quantity}</span>
                             <button onClick={() => {addToCart(item)}} className="bg-gray-200 p-1 rounded-full"> + </button>
-                            <button onClick={() => {}} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
+                            <button onClick={() => {clearCart()}} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
                         </div>
                     </div>
                 ))}
