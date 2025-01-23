@@ -15,6 +15,10 @@ export default function CartSection() {
             body: JSON.stringify({cartItems}),
         })
         const data = await response.json();
+        console.log(data.data.url);
+        if(data){
+            window.location.href = data.data.url; 
+        }
     }
 
     return (
