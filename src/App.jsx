@@ -7,22 +7,19 @@ import Navbar from "./components/Navbar";
 import ProductGrid from "./components/ProductGrid";
 import RegisterForm from "./components/RegisterForm";
 import { BrowserRouter, Route, Routes } from "react-router";
+import StaticComponent from "./components/StaticComponent";
 
 function App() {
   return (
-    // <BrowserRouter>
-    // <Routes>
-    //   <Route index element={<ProductGrid/>}/>
-    //   <Route path='signup' element={<RegisterForm/>}/>
-    //   <Route path='forgot-password' element={<ForgotPasswordForm/>}/>
-    // </Routes>
-    // </BrowserRouter>
-    <>
-      <Navbar />
-      <Hero/>
-      <ProductGrid />
-      <CartSection />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<CartSection/>}>
+          <Route path="static-component" element={<StaticComponent />} />
+        </Route>
+        <Route path="signup" element={<RegisterForm />} />
+        <Route path="forgot-password" element={<ForgotPasswordForm />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

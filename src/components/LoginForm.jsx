@@ -1,11 +1,13 @@
 import { useState } from "react";
 import authService from "../service/authService";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +28,8 @@ export default function LoginForm() {
         success: "Login successful 😊",
         error: "Login failed! Please check your email and password.",
       });
+
+      navigate("static-component");
     } catch (error) {
       throw new Error("Loggin faild!");
     }
