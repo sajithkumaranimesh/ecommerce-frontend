@@ -13,11 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="login" element={<CartSection/>}>
-          <Route path="static-component" element={<StaticComponent />} />
-        </Route>
-        <Route path="signup" element={<RegisterForm />} />
-        <Route path="forgot-password" element={<ForgotPasswordForm />}></Route>
+        <Route path="/" element={<ProductGrid/>}/>
       </Routes>
     </BrowserRouter>
   );
