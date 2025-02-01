@@ -33,6 +33,10 @@ const authService = {
       throw new Error("forgot password error");
     }
     return await response.json();
+  },
+
+  fetchAuthenticationToken: () => {
+    return localStorage.getItem('token')
   }
 };
 
