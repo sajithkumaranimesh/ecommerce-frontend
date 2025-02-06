@@ -1,28 +1,25 @@
-
 import { useContext } from "react";
 import { Cartcontext } from "../context/Cart";
 
-export default function CartSection() {
-    const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal, } = useContext(Cartcontext);
+export default function CartSection({ isOpen, closeModal }) {
+    const { cartItems, addToCart, removeFromCart, clearCart } = useContext(Cartcontext);
 
     const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     const handleSubmit = async () => {
-        console.log(cartItems,"totalprice" + ' = ' +totalPrice);
         const response = await fetch('http://localhost:3000/api/v1/order/create-checkout-session', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({cartItems}),
-        })
+            body: JSON.stringify({ cartItems }),
+        });
         const data = await response.json();
-        console.log(data.data.url);
-        if(data){
-            window.location.href = data.data.url; 
+        if (data) {
+            window.location.href = data.data.url;
         }
-    }
+    };
 
     return (
-        <section className="container mx-auto py-12 px-4">
+        <dialog open={isOpen} className="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">Your Cart</h2>
             <div className="space-y-8">
                 {cartItems.map((item) => (
@@ -35,10 +32,10 @@ export default function CartSection() {
                             </div>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <button onClick={() => {removeFromCart(item)}} className="bg-gray-200 p-1 rounded-full"> - </button>
+                            <button onClick={() => { removeFromCart(item) }} className="bg-gray-200 p-1 rounded-full"> - </button>
                             <span className="text-lg font-semibold">{item.quantity}</span>
-                            <button onClick={() => {addToCart(item)}} className="bg-gray-200 p-1 rounded-full"> + </button>
-                            <button onClick={() => {clearCart()}} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
+                            <button onClick={() => { addToCart(item) }} className="bg-gray-200 p-1 rounded-full"> + </button>
+                            <button onClick={() => { clearCart() }} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
                         </div>
                     </div>
                 ))}
@@ -49,6 +46,9 @@ export default function CartSection() {
                     Checkout
                 </button>
             </div>
-        </section>
+            <button onClick={closeModal} className="absolute top-2 right-2 text-gray-600 hover:text-gray-900">
+                ✖
+            </button>
+        </dialog>
     );
 }
