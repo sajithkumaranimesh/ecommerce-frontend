@@ -8,12 +8,14 @@ import ProductGrid from "./components/ProductGrid";
 import RegisterForm from "./components/RegisterForm";
 import { BrowserRouter, Route, Routes } from "react-router";
 import StaticComponent from "./components/StaticComponent";
+import OrderSuccess from "./components/OrderSuccess.jsx";
+import OrderCancel from "./components/OrderCancel.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ProductGrid/>}/>
+        <Route path="/" element={<OrderCancel/>}/>
       </Routes>
     </BrowserRouter>
   );
