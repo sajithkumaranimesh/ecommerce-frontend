@@ -1,13 +1,11 @@
-import CartSection from "./CartSection";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import ProductGrid from "./ProductGrid";
 
-export default function StaticComponent() {
+export default function StaticPageComponent() {
   return <>
   <Navbar/>
   <Hero/>
   <ProductGrid/>
-  <CartSection/>
   </>;
 }

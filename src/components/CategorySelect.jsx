@@ -3,25 +3,32 @@ import { useState } from "react";
 export default function CategorySelect({ categories, onSelectCategory }) {
     const [selectedCategory, setSelectedCategory] = useState("");
 
-    function handleCategoryChange(event) {
-        const category = event.target.value;
+    function handleCategoryChange(category) {
         setSelectedCategory(category);
         onSelectCategory(category);
     }
 
     return (
-        <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Filter by Category:</label>
-            <select 
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500"
-                value={selectedCategory} 
-                onChange={handleCategoryChange}
-            >
-                <option value="">All</option>
+        <div className="text-center">
+            <h2 className="text-lg font-semibold text-gray-800 mb-4">Shop By Category</h2>
+            <div className="flex justify-center gap-6">
                 {categories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
+                    <div 
+                        key={category.name}
+                        className={`flex flex-col items-center cursor-pointer transition transform ${
+                            selectedCategory === category ? "scale-110" : ""
+                        }`}
+                        onClick={() => handleCategoryChange(category)}
+                    >
+                        <img 
+                            src={category.image} 
+                            alt={category.name} 
+                            className="w-20 h-20 rounded-full object-cover border-2 border-gray-200 shadow-sm hover:border-orange-500"
+                        />
+                        <span className="mt-2 text-sm text-gray-700">{category}</span>
+                    </div>
                 ))}
-            </select>
+            </div>
         </div>
     );
 }
