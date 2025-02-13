@@ -25,6 +25,10 @@ export default function StaticPageComponent() {
   <Navbar openCartModal={openCartModal}  cartItemCount={cartItemCount}/>
   <Hero/>
   <ProductGrid/>
-  <CartSection isOpen={isCartOpen} closeModal={closeCartModal}/>
+  {isCartOpen && (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <CartSection isOpen={isCartOpen} closeModal={closeCartModal} />
+    </div>
+)}
   </>;
 }
