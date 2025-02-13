@@ -12,7 +12,7 @@ export default function Navbar({ openCartModal, cartItemCount }) {
         <div className="fixed top-0 left-0 w-full z-50 bg-orange-500 h-16 flex justify-between items-center px-6 shadow-lg">
             <div className="text-2xl font-bold text-white">
                 <a className="text-white hover:text-yellow-300 transition-all">
-                    Brand
+                    Cinnora
                 </a>
             </div>
 
