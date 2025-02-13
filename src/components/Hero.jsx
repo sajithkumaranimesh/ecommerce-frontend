@@ -1,10 +1,10 @@
 
 export default function Hero() {
     return (
-        <section className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://your-image-link.com/hero-image.jpg')" }}>
-            <div className="absolute inset-0 bg-black opacity-40"></div> {/* Overlay */}
+        <section className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://img.freepik.com/premium-photo/cinnamon-powder-table-wooden_62856-11.jpg?w=1380')" }}>
+            <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="relative z-10 flex flex-col justify-center items-center text-center text-white px-4 md:px-8">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+                <h1 className="mt-48 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
                     Welcome to Our Website
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl mb-6">
