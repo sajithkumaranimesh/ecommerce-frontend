@@ -37,7 +37,7 @@ export default function CartSection({ isOpen, closeModal }) {
                         <button onClick={() => removeFromCart(item)} className="bg-gray-200 p-1 rounded-full"> - </button>
                         <span className="text-lg font-semibold">{item.quantity}</span>
                         <button onClick={() => addToCart(item)} className="bg-gray-200 p-1 rounded-full"> + </button>
-                        <button onClick={() => clearCart()} className="text-red-500 hover:text-red-700 transition-all">Remove</button>
+                        {/* <button onClick={() => clearCart()} className="text-red-500 hover:text-red-700 transition-all">Remove</button> */}
                     </div>
                 </div>
             ))}
