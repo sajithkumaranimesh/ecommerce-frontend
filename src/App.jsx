@@ -1,11 +1,11 @@
-import './App.css'
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./config/RouterConfig.jsx";
 
 function App() {
   return (
-    <>
-    <p>Hello world</p>
-    </>
-  )
+      <RouterProvider router={router}/>
+  );
 }
 
-export default App
+export default App;
