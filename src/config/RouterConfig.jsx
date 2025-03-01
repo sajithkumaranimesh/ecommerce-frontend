@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import StaticPageComponent from "../components/StaticPageComponent";
 import CartSection from "../components/CartSection"
+import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 
 export const router = createBrowserRouter([
     {
@@ -10,6 +12,18 @@ export const router = createBrowserRouter([
             {
                 path: 'cart',
                 element: <CartSection/>
+            },
+            // {
+            //     path: 'checkout',
+            //     element: 
+            // }
+            {
+                path: 'login',
+                element: <LoginForm/>
+            },
+            {
+                path: 'register',
+                element: <RegisterForm/>
             }
         ]
     }
